@@ -1,0 +1,234 @@
+/* === Final Ghibli Dashboard - Fireflies + Ripple + Floating Leaves + Dazzling Font === */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka', sans-serif;
+    background: url('../images/warm.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #2e1f0f;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    text-align: center;
+}
+
+/* === Fireflies Animation === */
+.firefly {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 150, 0.8);
+    border-radius: 50%;
+    animation: blink 2s infinite ease-in-out, float 12s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 255, 100, 0.6);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* === Floating Leaves === */
+.leaf {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background: url('../images/leaf.png') no-repeat center center;
+    background-size: contain;
+    animation: floatLeaf 15s linear infinite;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatLeaf {
+    0% { transform: translateY(-10%) rotate(0deg); left: 0; }
+    100% { transform: translateY(110vh) rotate(360deg); left: 100vw; }
+}
+
+/* === Welcome Heading with Glass Effect === */
+h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 30px auto;
+    color: #3e260c;
+    text-shadow: 1px 2px 3px #ffd37e;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* === Toggle Buttons with Ripple === */
+.toggle-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #ffb347, #ffcc33);
+    border: none;
+    color: #2e1f0f;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    animation: bounceGlow 2.5s infinite;
+    display: inline-block;
+}
+
+@keyframes bounceGlow {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 10px rgba(255, 200, 0, 0.4); }
+    50% { transform: translateY(-3px); box-shadow: 0 0 20px rgba(255, 200, 0, 0.7); }
+}
+
+.toggle-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.toggle-btn:active::after {
+    width: 120px;
+    height: 120px;
+}
+
+/* === Forms & Cards === */
+#applicationForm,
+#applicationsSection {
+    max-width: 1000px;
+    background-color: rgba(255, 248, 230, 0.95);
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative;
+    text-align: left;
+}
+
+h3 {
+    color: #5b3a00;
+    border-bottom: 2px solid #f5c97b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fffdf7;
+}
+
+input[type="submit"],
+button {
+    background: linear-gradient(145deg, #ffb347, #ffcc33);
+    color: #2e1f0f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: linear-gradient(145deg, #ffcc33, #ffb347);
+    transform: translateY(-1px);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    background-color: rgba(255, 250, 240, 0.95);
+}
+
+table th, table td {
+    border: 1px solid #e0c38b;
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #ffecb3;
+    color: #4d3300;
+}
+
+table tr:nth-child(even) {
+    background-color: #fff5dd;
+}
+
+a[href*="logout"] {
+    display: inline-block;
+    text-align: center;
+    margin: 50px auto;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff5e5e, #ff9966);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 80, 80, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+a[href*="logout"]:hover {
+    background: linear-gradient(135deg, #ff4c4c, #ff704d);
+    box-shadow: 0 0 12px rgba(255, 80, 80, 0.6);
+    transform: translateY(-1px);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .toggle-btn {
+        width: 90%;
+        font-size: 1rem;
+        display: block;
+        margin: 12px auto;
+    }
+
+    table,
+    #applicationForm,
+    #applicationsSection {
+        width: 95%;
+    }
+}

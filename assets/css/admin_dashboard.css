@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fredoka:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', 'Poppins', sans-serif;
+}
+
+body {
+  background: url('../images/karachi.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🌌 Moving Stars Background Layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/star-bg.png') repeat;
+  animation: starsMove 180s linear infinite;
+  z-index: 0;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+@keyframes starsMove {
+  0% { background-position: 0 0; }
+  100% { background-position: -3000px 3000px; }
+}
+
+/* 🌟 Glass Panel */
+.admin-container {
+  background: rgba(10, 15, 25, 0.6);
+  border-radius: 32px;
+  padding: 50px 40px;
+  width: 90%;
+  max-width: 520px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+/* 🪄 Neon Flicker Heading */
+.admin-container h1 {
+  font-size: 32px;
+  color: #00ffe0;
+  margin-bottom: 35px;
+  font-family: 'Fredoka', cursive;
+  text-shadow: 0 0 6px #00ffe0, 0 0 14px #00c2ff;
+  animation: flicker 2.5s infinite ease-in-out alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.admin-container h1 span {
+  color: #fff;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    text-shadow: 0 0 6px #00ffe0, 0 0 14px #00c2ff;
+  }
+  40% {
+    text-shadow: 0 0 3px #00aac0;
+  }
+  70% {
+    text-shadow: 0 0 9px #00f7ff, 0 0 22px #00bfff;
+  }
+}
+
+/* 📋 Menu Links */
+.admin-links {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-links li {
+  margin: 16px 0;
+}
+
+.admin-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  color: #e7ffff;
+  background: rgba(0, 30, 50, 0.7);
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  transform: perspective(500px) translateZ(0);
+}
+
+/* 🌠 Floating Panel Effect (3D Elevation) */
+.admin-links a:hover {
+  background: linear-gradient(135deg, #0dd2ff, #0076d1);
+  transform: perspective(500px) translateZ(6px);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.4);
+}
+
+.admin-links a i {
+  color: #00f7ff;
+  text-shadow: 0 0 4px rgba(0, 255, 255, 0.4);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.admin-links a:hover i {
+  transform: translateY(-2px);
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff;
+}
+
+/* 🔥 Active Page Highlight */
+.admin-links a.active {
+  background: linear-gradient(145deg, #00ffe0, #00bcd4);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.admin-links a.active i {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* 🔴 Logout Styling */
+.logout-link {
+  background: linear-gradient(135deg, #ff4e4e, #cc0000) !important;
+  color: white !important;
+  box-shadow: 0 0 12px rgba(255, 50, 50, 0.3);
+  transition: all 0.3s ease;
+}
+
+.logout-link:hover {
+  background: linear-gradient(135deg, #cc0000, #ff4e4e) !important;
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(255, 70, 70, 0.5);
+}
+
+/* 🔁 Rotate Logout Icon */
+.logout-link i {
+  transition: transform 0.4s ease;
+}
+
+.logout-link:hover i {
+  transform: rotate(180deg);
+}

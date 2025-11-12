@@ -1,0 +1,184 @@
+/* signup.css - Clean Background + Glass Glow + Rocket Links */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../images/HEC.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+   
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signup-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 25px;
+    box-shadow: 0 0 50px rgba(0, 255, 180, 0.25);
+    padding: 50px 50px;
+    max-width: 900px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.signup-container h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #000;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Two-column layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 40px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1 !important;
+    }
+
+    .link-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+.form-grid div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+input:focus,
+select:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+    background: white;
+}
+
+.full-width {
+    grid-column: span 2;
+    width: 100%;
+}
+
+/* Submit button with animated gradient */
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+    background-size: 600% 600%;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    animation: gradientSlide 5s ease infinite;
+    margin-top: 10px;
+}
+
+@keyframes gradientSlide {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 0 20px #00c6ff, 0 0 30px #0072ff;
+    transform: scale(1.03);
+}
+
+/* Footer links – rocket-style buttons */
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-btn {
+    display: inline-block;
+    margin: 6px 10px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: #004d40;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 8px rgba(0, 198, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.link-btn:hover {
+    background: #00c6ff;
+    color: white;
+    box-shadow: 0 0 12px #00c6ff, 0 0 20px #0072ff;
+    transform: translateY(-2px) scale(1.05);
+}

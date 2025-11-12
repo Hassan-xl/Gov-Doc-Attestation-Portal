@@ -1,0 +1,134 @@
+/* login.css - Cartoon Style Fantasy Login Form - FINAL */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('../images/isl.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: bgFloat 10s infinite ease-in-out;
+}
+
+@keyframes bgFloat {
+    0%, 100% { background-position: center center; }
+    50% { background-position: center top; }
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px 50px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    animation: popIn 1s ease forwards;
+    text-align: center;
+    position: relative;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.login-container h2 {
+    font-size: 28px;
+    color: #000; /* Changed from #003f5c to black */
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: left;
+    color: #000; /* Changed from #222 to pure black */
+}
+
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 15px;
+    color: #000;
+    transition: 0.3s;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00c6ff;
+}
+
+/* Animated Rocket Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    box-shadow: 0 0 20px #ff7eb3;
+}
+
+/* Links */
+.login-container .links {
+    margin-top: 20px;
+}
+
+.login-container .links a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 6px 12px;
+    color: #004d40;
+    padding: 8px 14px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.4);
+    transition: 0.3s;
+}
+
+.login-container .links a:hover {
+    background: #00c6ff;
+    color: #fff;
+    box-shadow: 0 0 10px #00c6ff;
+}

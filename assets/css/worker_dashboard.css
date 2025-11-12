@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', sans-serif;
+}
+
+body {
+  background: url('../images/work.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  overflow-x: hidden;
+}
+
+/* 🖤 BLACK GLOWING HEADING */
+h2 {
+  font-size: 36px;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow:
+    0 0 5px #ffffffcc,
+    0 0 10px #00ffe0,
+    0 0 20px #00ffe0,
+    0 0 40px #00ffe0;
+  animation: blackGlow 3s ease-in-out infinite;
+}
+
+@keyframes blackGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #ffffffcc,
+      0 0 10px #00ffe0,
+      0 0 20px #00ffe0,
+      0 0 40px #00ffe0;
+  }
+  50% {
+    text-shadow:
+      0 0 8px #ffffff,
+      0 0 16px #00fff7,
+      0 0 32px #00fff7,
+      0 0 60px #00fff7;
+  }
+}
+
+/* Section Buttons */
+.section-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.toggle-btn {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 40px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: all 0.35s ease;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(42, 82, 152, 0.6);
+}
+
+/* Section Area */
+.table-section {
+  display: none;
+  animation: fadeInUp 1s ease forwards;
+  width: 100%;
+  max-width: 1100px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 25px;
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card Style */
+.card {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card h4 {
+  font-size: 22px;
+  color: #76f0c1;
+  margin-bottom: 16px;
+}
+
+/* PDF Button */
+.card p a.pdf-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #76f0c1, #2f9fda);
+  color: #000;
+  font-weight: bold;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(118, 240, 193, 0.25);
+  transition: all 0.3s ease;
+}
+
+.card p a.pdf-link:hover {
+  background: linear-gradient(135deg, #2f9fda, #76f0c1);
+  color: #fff;
+  transform: scale(1.05);
+  text-shadow: 0 0 6px #a0f0ff;
+}
+
+.card p {
+  margin: 8px 0;
+  text-align: center;
+}
+
+.card a {
+  color: #76f0c1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  color: #42d3ba;
+  text-shadow: 0 0 4px #42d3ba;
+}
+
+.card small {
+  color: #ccc;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.card form {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card input[type="file"],
+.card textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.card button {
+  background: linear-gradient(135deg, #2f9fda, #0062ff);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card button:hover {
+  background: linear-gradient(135deg, #0062ff, #2f9fda);
+  transform: scale(1.05);
+}
+
+/* Status Grid */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.status-box {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(118, 240, 193, 0.1);
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.status-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 32px rgba(118, 240, 193, 0.3);
+}
+
+.status-box i {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #76f0c1;
+}
+
+.status-box .label {
+  font-weight: 600;
+  color: #76f0c1;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.status-box .value {
+  font-size: 14px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px 20px;
+  text-align: left;
+}
+
+th {
+  background: rgba(10, 10, 40, 0.9);
+  color: #76f0c1;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+td {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Apply & View Buttons in Table */
+.table-section table a.button-link,
+.table-section table button {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #2f9fda, #00c6ff);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 198, 255, 0.3);
+  cursor: pointer;
+}
+
+.table-section table a.button-link:hover,
+.table-section table button:hover {
+  background: linear-gradient(135deg, #00c6ff, #2f9fda);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 198, 255, 0.5);
+}
+
+/* Fix form layout in table cell */
+.table-section table td form {
+  display: inline-block;
+}
+
+/* Logout Button */
+.logout {
+  margin: 50px auto 0;
+  padding: 12px 28px;
+  background: linear-gradient(145deg, #ff4d4d, #e60000);
+  color: #fff;
+  border-radius: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.logout:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #e60000, #ff4d4d);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .toggle-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
