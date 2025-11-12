@@ -102,7 +102,7 @@ Improved UI/UX with responsive design.
 
 👨‍💻 Author
 Hassan
-📧 [your.email@example.com]
+📧 [workxl5801@gmail.com]
 🌐 https://github.com/Hassan-xl
 
 🪪 License
